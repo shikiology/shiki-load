@@ -1,0 +1,2 @@
+source "$BR2_EXTERNAL_SHIKI_PATH/r8168/Config.in"
+source "$BR2_EXTERNAL_SHIKI_PATH/r8125/Config.in"

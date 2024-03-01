@@ -1,0 +1,15 @@
+!.gitkeep
+.vscode
+skl*.img
+skl*.vmdk
+*.zip
+.buildroot
+test*.sh
+docker/syno-compiler/Dockerfile
+cache
+*.bak
+*.o
+/files/board/skl/p3/addons
+/files/board/skl/p3/lkms
+/files/board/skl/p3/modules
+/tests

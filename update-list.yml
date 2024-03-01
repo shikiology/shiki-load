@@ -1,0 +1,6 @@
+remove:
+replace:
+  ".buildroot/output/images/bzImage": "/mnt/p3/bzImage-shiki"
+  ".buildroot/output/images/rootfs.cpio.xz": "/mnt/p3/initrd-shiki"
+  "files/board/shiki/p1/SHIKI-VERSION" : "/mnt/p1/SHIKI-VERSION"
+  "files/board/shiki/p1/grub/": "/mnt/p1/grub/"
