@@ -1,5 +1,5 @@
 
-SHIKI_VERSION="0.0.1-alpha"
+SHIKI_VERSION="0.0.1-beta-lkmv7.1"
 
 # Define paths
 TMP_PATH="/tmp"
