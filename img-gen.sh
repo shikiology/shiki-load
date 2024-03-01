@@ -17,9 +17,9 @@ echo "Getting latest LKMs"
 if [ `ls ../shiki-lkm/output | wc -l` -eq 0 ]; then
   echo "  Downloading from github"
   TAG=`curl -s https://api.github.com/repos/andatoshiki/shiki-lkm/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
-  curl -L "https://github.com/andatoshiki/shiki-lkm/releases/download/${TAG}/sk-lkms.zip" -o /tmp/sk-lkms.zip
+  curl -L "https://github.com/andatoshiki/shiki-lkm/releases/download/${TAG}/shiki-lkms.zip" -o /tmp/shiki-lkms.zip
   rm -rf files/board/shiki/p3/lkms/*
-  unzip /tmp/sk-lkms.zip -d files/board/shiki/p3/lkms
+  unzip /tmp/shiki-lkms.zip -d files/board/shiki/p3/lkms
 else
   echo "  Copying from ../shiki-lkm/output"
   rm -rf files/board/shiki/p3/lkms/*

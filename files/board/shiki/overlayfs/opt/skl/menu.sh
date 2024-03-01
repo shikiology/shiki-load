@@ -1079,7 +1079,7 @@ function updateMenu() {
         fi
         dialog --backtitle "`backtitle`" --title "Update LKMs" --aspect 18 \
           --infobox "Downloading last version" 0 0
-        STATUS=`curl --insecure -s -w "%{http_code}" -L "https://github.com/andatoshiki/shiki-lkm/releases/download/${TAG}/sk-lkms.zip" -o /tmp/sk-lkms.zip`
+        STATUS=`curl --insecure -s -w "%{http_code}" -L "https://github.com/andatoshiki/shiki-lkm/releases/download/${TAG}/shiki-lkms.zip" -o /tmp/shiki-lkms.zip`
         if [ $? -ne 0 -o ${STATUS} -ne 200 ]; then
           dialog --backtitle "`backtitle`" --title "Update LKMs" --aspect 18 \
             --msgbox "Error downloading last version" 0 0
@@ -1088,7 +1088,7 @@ function updateMenu() {
         dialog --backtitle "`backtitle`" --title "Update LKMs" --aspect 18 \
           --infobox "Extracting last version" 0 0
         rm -rf "${LKM_PATH}/"*
-        unzip /tmp/sk-lkms.zip -d "${LKM_PATH}" >/dev/null 2>&1
+        unzip /tmp/shiki-lkms.zip -d "${LKM_PATH}" >/dev/null 2>&1
         DIRTY=1
         dialog --backtitle "`backtitle`" --title "Update LKMs" --aspect 18 \
           --msgbox "LKMs updated with success!" 0 0

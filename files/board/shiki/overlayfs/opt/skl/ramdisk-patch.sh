@@ -122,7 +122,7 @@ echo -n "."
 # Copying fake modprobe
 cp "${PATCH_PATH}/iosched-trampoline.sh" "${RAMDISK_PATH}/usr/sbin/modprobe"
 # Copying LKM to /usr/lib/modules
-gzip -dc "${LKM_PATH}/sk-${PLATFORM}-${KVER}-${LKM}.ko.gz" > "${RAMDISK_PATH}/usr/lib/modules/rp.ko"
+gzip -dc "${LKM_PATH}/shiki-${PLATFORM}-${KVER}-${LKM}.ko.gz" > "${RAMDISK_PATH}/usr/lib/modules/rp.ko"
 
 # Addons
 #MAXDISKS=`readConfigKey "maxdisks" "${USER_CONFIG_FILE}"`

@@ -43,7 +43,7 @@ jobs:
           # Get latest LKMs
           echo "Getting latest LKMs"
           TAG=`curl -s https://api.github.com/repos/andatoshiki/shiki-lkm/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
-          STATUS=`curl -w "%{http_code}" -L "https://github.com/andatoshiki/shiki-lkm/releases/download/${TAG}/sk-lkms.zip" -o /tmp/sk-lkms.zip`
+          STATUS=`curl -w "%{http_code}" -L "https://github.com/andatoshiki/shiki-lkm/releases/download/${TAG}/shiki-lkms.zip" -o /tmp/shiki-lkms.zip`
           echo "Status=${STATUS}"
           [ ${STATUS} -ne 200 ] && exit 1
 
@@ -109,7 +109,7 @@ jobs:
           rm -rf .buildroot/board/shiki/p3
           # Unzip LKMs
           rm -rf files/board/shiki/p3/lkms/*
-          unzip /tmp/sk-lkms.zip -d files/board/shiki/p3/lkms
+          unzip /tmp/shiki-lkms.zip -d files/board/shiki/p3/lkms
           # Install Addons
           mkdir -p /tmp/addons
           unzip /tmp/addons.zip -d /tmp/addons
