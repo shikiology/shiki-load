@@ -1036,7 +1036,8 @@ function updateMenu() {
       d)
         dialog --backtitle "`backtitle`" --title "Update addons" --aspect 18 \
           --infobox "Checking last version" 0 0
-        TAG=`curl --insecure -s https://api.github.com/repos/andatoshiki/shiki-addons/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`        if [ $? -ne 0 -o -z "${TAG}" ]; then
+        TAG=`curl --insecure -s https://api.github.com/repos/andatoshiki/shiki-addons/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
+        if [ $? -ne 0 -o -z "${TAG}" ]; then
           dialog --backtitle "`backtitle`" --title "Update addons" --aspect 18 \
             --msgbox "Error checking new version" 0 0
           continue
