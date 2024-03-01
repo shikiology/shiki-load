@@ -23,7 +23,7 @@ fi
 
 # Shows title
 clear
-TITLE="Welcome to Automated Redpill Loader v${SHIKI_VERSION}"
+TITLE="Welcome to atuomated loader for shiki v${SHIKI_VERSION}, happy hacking =)"
 printf "\033[1;44m%*s\n" $COLUMNS ""
 printf "\033[1;44m%*s\033[A\n" $COLUMNS ""
 printf "\033[1;32m%*s\033[0m\n" $(((${#TITLE}+$COLUMNS)/2)) "${TITLE}"
