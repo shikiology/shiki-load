@@ -1,7 +1,7 @@
 !.gitkeep
 .vscode
-skl*.img
-skl*.vmdk
+shiki*.img
+shiki*.vmdk
 *.zip
 .buildroot
 test*.sh
@@ -9,7 +9,7 @@ docker/syno-compiler/Dockerfile
 cache
 *.bak
 *.o
-/files/board/skl/p3/addons
-/files/board/skl/p3/lkms
-/files/board/skl/p3/modules
+/files/board/shiki/p3/addons
+/files/board/shiki/p3/lkms
+/files/board/shiki/p3/modules
 /tests

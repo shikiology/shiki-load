@@ -2,7 +2,7 @@
 
 set -e
 
-MODEL_CONFIG_PATH="./files/board/skl/overlayfs/opt/skl/model-configs"
+MODEL_CONFIG_PATH="./files/board/shiki/overlayfs/opt/shiki/model-configs"
 
 RELEASE="7.0.1"
 BUILDNUMBER="42218"
