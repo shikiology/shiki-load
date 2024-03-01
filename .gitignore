@@ -9,7 +9,7 @@ docker/syno-compiler/Dockerfile
 cache
 *.bak
 *.o
-/files/board/shiki/p3/addons
-/files/board/shiki/p3/lkms
-/files/board/shiki/p3/modules
+# /files/board/shiki/p3/addons
+# /files/board/shiki/p3/lkms
+# /files/board/shiki/p3/modules
 /tests
