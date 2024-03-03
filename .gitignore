@@ -13,3 +13,4 @@ cache
 # /files/board/shiki/p3/lkms
 # /files/board/shiki/p3/modules
 /tests
+.DS_Store
