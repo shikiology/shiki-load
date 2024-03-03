@@ -17,5 +17,6 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          ${{ github.actor }} pushed new commit(s) to https://github.com/${{ github.repository }}/commit/${{github.sha}}
+          @${{ github.actor }} ${{ github.event.name }} new commit(s) to https://github.com/${{ github.repository }}}
           Commit message: ${{ github.event.commits[0].message }}
+          Commit SHA: ${{ github.sha }}
