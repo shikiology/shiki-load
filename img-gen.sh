@@ -16,8 +16,8 @@ rm -rf ".buildroot/board/shiki/p3"
 echo "Getting latest LKMs"
 if [ `ls ../shiki-lkm/output | wc -l` -eq 0 ]; then
   echo "  Downloading from github"
-  TAG=`curl -s https://api.github.com/repos/andatoshiki/shiki-lkm/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
-  curl -L "https://github.com/andatoshiki/shiki-lkm/releases/download/${TAG}/shiki-lkms.zip" -o /tmp/shiki-lkms.zip
+  TAG=`curl -s https://api.github.com/repos/shikiology/shiki-lkm/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
+  curl -L "https://github.com/shikiology/shiki-lkm/releases/download/${TAG}/shiki-lkms.zip" -o /tmp/shiki-lkms.zip
   rm -rf files/board/shiki/p3/lkms/*
   unzip /tmp/shiki-lkms.zip -d files/board/shiki/p3/lkms
 else
@@ -33,8 +33,8 @@ mkdir -p /tmp/addons
 if [ -d ../shiki-addons ]; then
   cp ../shiki-addons/*.addon /tmp/addons/
 else
-  TAG=`curl -s https://api.github.com/repos/andatoshiki/shiki-addons/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
-  curl -L "https://github.com/andatoshiki/shiki-addons/releases/download/${TAG}/addons.zip" -o /tmp/addons.zip
+  TAG=`curl -s https://api.github.com/repos/shikiology/shiki-addons/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
+  curl -L "https://github.com/shikiology/shiki-addons/releases/download/${TAG}/addons.zip" -o /tmp/addons.zip
   rm -rf /tmp/addons
   unzip /tmp/addons.zip -d /tmp/addons
 fi
@@ -59,12 +59,12 @@ if [ -d ../shiki-modules ]; then
   (cd firmware && tar caf "${MODULES_DIR}/firmware.tgz" *)
   cd -
 else
-  TAG=`curl -s https://api.github.com/repos/andatoshiki/shiki-modules/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
+  TAG=`curl -s https://api.github.com/repos/shikiology/shiki-modules/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
   while read PLATFORM KVER; do
     FILE="${PLATFORM}-${KVER}"
-    curl -L "https://github.com/andatoshiki/shiki-modules/releases/download/${TAG}/${FILE}.tgz" -o "${MODULES_DIR}/${FILE}.tgz"
+    curl -L "https://github.com/shikiology/shiki-modules/releases/download/${TAG}/${FILE}.tgz" -o "${MODULES_DIR}/${FILE}.tgz"
   done < PLATFORMS
-  curl -L "https://github.com/andatoshiki/shiki-modules/releases/download/${TAG}/firmware.tgz" -o "${MODULES_DIR}/firmware.tgz"
+  curl -L "https://github.com/shikiology/shiki-modules/releases/download/${TAG}/firmware.tgz" -o "${MODULES_DIR}/firmware.tgz"
 fi
 
 # Copy files

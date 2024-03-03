@@ -42,29 +42,29 @@ jobs:
         run: |
           # Get latest LKMs
           echo "Getting latest LKMs"
-          TAG=`curl -s https://api.github.com/repos/andatoshiki/shiki-lkm/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
-          STATUS=`curl -w "%{http_code}" -L "https://github.com/andatoshiki/shiki-lkm/releases/download/${TAG}/shiki-lkms.zip" -o /tmp/shiki-lkms.zip`
+          TAG=`curl -s https://api.github.com/repos/shikiology/shiki-lkm/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
+          STATUS=`curl -w "%{http_code}" -L "https://github.com/shikiology/shiki-lkm/releases/download/${TAG}/shiki-lkms.zip" -o /tmp/shiki-lkms.zip`
           echo "Status=${STATUS}"
           [ ${STATUS} -ne 200 ] && exit 1
 
           # Get latest addons and install its
           echo "Getting latest Addons"
-          TAG=`curl -s https://api.github.com/repos/andatoshiki/shiki-addons/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
-          STATUS=`curl -w "%{http_code}" -L "https://github.com/andatoshiki/shiki-addons/releases/download/${TAG}/addons.zip" -o /tmp/addons.zip`
+          TAG=`curl -s https://api.github.com/repos/shikiology/shiki-addons/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
+          STATUS=`curl -w "%{http_code}" -L "https://github.com/shikiology/shiki-addons/releases/download/${TAG}/addons.zip" -o /tmp/addons.zip`
           echo "Status=${STATUS}"
           [ ${STATUS} -ne 200 ] && exit 1
 
           # Get latest modules
           echo "Getting latest modules"
           MODULES_DIR="files/board/shiki/p3/modules"
-          TAG=`curl -s https://api.github.com/repos/andatoshiki/shiki-modules/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
+          TAG=`curl -s https://api.github.com/repos/shikiology/shiki-modules/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
           while read PLATFORM KVER; do
             FILE="${PLATFORM}-${KVER}"
-            STATUS=`curl -w "%{http_code}" -L "https://github.com/andatoshiki/shiki-modules/releases/download/${TAG}/${FILE}.tgz" -o "${MODULES_DIR}/${FILE}.tgz"`
+            STATUS=`curl -w "%{http_code}" -L "https://github.com/shikiology/shiki-modules/releases/download/${TAG}/${FILE}.tgz" -o "${MODULES_DIR}/${FILE}.tgz"`
             echo "Status=${STATUS}"
             [ ${STATUS} -ne 200 ] && exit 1
           done < PLATFORMS
-          STATUS=`curl -w "%{http_code}" -L "https://github.com/andatoshiki/shiki-modules/releases/download/${TAG}/firmware.tgz" -o "${MODULES_DIR}/firmware.tgz"`
+          STATUS=`curl -w "%{http_code}" -L "https://github.com/shikiology/shiki-modules/releases/download/${TAG}/firmware.tgz" -o "${MODULES_DIR}/firmware.tgz"`
           echo "Status=${STATUS}"
           [ ${STATUS} -ne 200 ] && exit 1
           echo OK

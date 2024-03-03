@@ -4,9 +4,9 @@ synoinfo: &synoinfo
   support_memory_compatibility: "no"
   buzzeroffen: "0xffff"
   support_led_brightness_adjustment: "no"
-  rss_server: "https://raw.githubusercontent.com/andatoshiki/shiki/main/rss.xml"
-  rss_server_ssl: "https://raw.githubusercontent.com/andatoshiki/shiki/main/rss.xml"
-  rss_server_v2: "https://raw.githubusercontent.com/andatoshiki/shiki/main/rss.json"
+  rss_server: "https://raw.githubusercontent.com/shikiology/shiki/main/rss.xml"
+  rss_server_ssl: "https://raw.githubusercontent.com/shikiology/shiki/main/rss.xml"
+  rss_server_v2: "https://raw.githubusercontent.com/shikiology/shiki/main/rss.json"
   support_syno_hybrid_raid:
   supportraidgroup:
 cmdline: &cmdline

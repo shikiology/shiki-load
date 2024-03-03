@@ -1,6 +1,6 @@
 [submodule "shiki-lkm"]
 	path = shiki-lkm
-	url = https://github.com/andatoshiki/shiki-lkm
+	url = https://github.com/shikiology/shiki-lkm
 [submodule "addons"]
 	path = addons
-	url = https://github.com/andatoshiki/shiki-addons
+	url = https://github.com/shikiology/shiki-addons
